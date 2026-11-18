@@ -69,7 +69,9 @@ macOS 15.2 и новее · Apple Silicon и Intel · PNG, JPEG, PDF, MP4
 ```sh
 python3 -m venv build/dmg-tools
 build/dmg-tools/bin/python -m pip install 'dmgbuild==1.6.7'
+xcrun swift dmg-background.swift build
 build/dmg-tools/bin/dmgbuild -s dmg-settings.py -D "app=$PWD/build/Mochi Snap.app" \
+  -D "background=$PWD/build/dmg-background.png" \
   'Mochi Snap' build/MochiSnap-macOS.dmg
 ```
 

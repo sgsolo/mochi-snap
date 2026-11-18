@@ -7,7 +7,7 @@ files = [app]
 symlinks = {"Applications": "/Applications"}
 
 format = "UDZO"
-background = "builtin-arrow"
+background = defines["background"]
 window_rect = ((160, 170), (640, 280))
 icon_size = 112
 text_size = 14
