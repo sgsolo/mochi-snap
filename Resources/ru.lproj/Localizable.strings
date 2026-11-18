@@ -13,3 +13,14 @@
 "storage.folder.reset" = "По умолчанию";
 "storage.folder.unavailable" = "Папка сохранения недоступна.";
 "storage.format.menu" = "Формат снимков";
+"install.title" = "Перенести Mochi Snap в «Программы»?";
+"install.message" = "Mochi Snap скопируется в папку «Программы» и откроется оттуда.";
+"install.personal.message" = "Mochi Snap скопируется в твою личную папку «Программы» и откроется оттуда.";
+"install.confirm" = "Перенести и открыть";
+"install.later" = "Позже";
+"install.existing.title" = "Открыть Mochi Snap из «Программ»?";
+"install.existing.open" = "Открыть установленную копию";
+"install.occupied.title" = "В «Программах» уже есть Mochi Snap.app";
+"install.occupied.message" = "Открой папку в Finder, если хочешь заменить файл вручную.";
+"install.occupied.open" = "Открыть папку";
+"install.error.title" = "Не удалось открыть Mochi Snap из «Программ»";

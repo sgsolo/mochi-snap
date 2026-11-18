@@ -13,3 +13,14 @@
 "storage.folder.reset" = "Use Default";
 "storage.folder.unavailable" = "The save folder is unavailable.";
 "storage.format.menu" = "Screenshot Format";
+"install.title" = "Move Mochi Snap to Applications?";
+"install.message" = "Mochi Snap will be copied to Applications and opened from there.";
+"install.personal.message" = "Mochi Snap will be copied to your personal Applications folder and opened from there.";
+"install.confirm" = "Move and Open";
+"install.later" = "Later";
+"install.existing.title" = "Open Mochi Snap from Applications?";
+"install.existing.open" = "Open Installed Copy";
+"install.occupied.title" = "Mochi Snap.app already exists in Applications";
+"install.occupied.message" = "Open the folder in Finder if you’d like to replace the file manually.";
+"install.occupied.open" = "Open Folder";
+"install.error.title" = "Couldn’t Open Mochi Snap from Applications";

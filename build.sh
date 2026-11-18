@@ -15,7 +15,8 @@ ditto "$project_dir/Resources" "$bundle/Contents/Resources"
 
 for arch in arm64 x86_64; do
     xcrun swiftc -O -swift-version 6 -target "$arch-apple-macosx15.2" \
-        "$project_dir/Sources/main.swift" "$project_dir/Sources/CaptureCanvas.swift" "$project_dir/Sources/MochiStyle.swift" -o "$stage/MochiSnap-$arch"
+        "$project_dir/Sources/main.swift" "$project_dir/Sources/AppInstallation.swift" \
+        "$project_dir/Sources/CaptureCanvas.swift" "$project_dir/Sources/MochiStyle.swift" -o "$stage/MochiSnap-$arch"
 done
 xcrun lipo -create "$stage/MochiSnap-arm64" "$stage/MochiSnap-x86_64" \
     -output "$bundle/Contents/MacOS/MochiSnap"

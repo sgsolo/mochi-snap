@@ -381,6 +381,16 @@ private final class CaptureApp: NSObject, NSApplicationDelegate, NSMenuDelegate,
     }
 
     func applicationDidFinishLaunching(_ notification: Notification) {
+        Task { @MainActor in
+            if await AppInstallation.openInstalledCopyIfRequested() {
+                NSApp.terminate(nil)
+            } else {
+                startCaptureApp()
+            }
+        }
+    }
+
+    private func startCaptureApp() {
         statusItem = NSStatusBar.system.statusItem(withLength: 36)
         menu.delegate = self
         menu.autoenablesItems = false
@@ -401,7 +411,7 @@ private final class CaptureApp: NSObject, NSApplicationDelegate, NSMenuDelegate,
     }
 
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        showGuide()
+        if statusItem != nil { showGuide() }
         return false
     }
 
