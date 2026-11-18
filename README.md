@@ -6,7 +6,7 @@
 
 Скриншоты и запись экрана в мягком пастельном интерфейсе. Камера с румянцем живёт в строке меню, инструменты всегда под рукой.
 
-**[↓ Скачать Mochi Snap для macOS](https://github.com/sgsolo/mochi-snap/releases/latest/download/MochiSnap-macOS.zip)**
+**[↓ Скачать Mochi Snap для macOS (.dmg)](https://github.com/sgsolo/mochi-snap/releases/latest/download/MochiSnap-macOS.dmg)** · [ZIP-архив](https://github.com/sgsolo/mochi-snap/releases/latest/download/MochiSnap-macOS.zip)
 
 macOS 15.2 и новее · Apple Silicon и Intel · PNG, JPEG, PDF, MP4
 
@@ -17,9 +17,12 @@ macOS 15.2 и новее · Apple Silicon и Intel · PNG, JPEG, PDF, MP4
 
 ## Начать
 
-1. Распакуй архив и открой **Mochi Snap.app**.
-2. Нажми **Перенести и открыть**, чтобы установить приложение в «Программы». Затем нажми на камеру в строке меню.
-3. Разреши захват экрана в **Системные настройки → Конфиденциальность и безопасность → Запись экрана и системного звука**.
+1. Открой скачанный **MochiSnap-macOS.dmg**.
+2. Перетащи **Mochi Snap** по стрелке на ярлык **Applications** («Программы»).
+3. Запусти **Mochi Snap** из «Программ» и нажми на камеру в строке меню.
+4. Разреши захват экрана в **Системные настройки → Конфиденциальность и безопасность → Запись экрана и системного звука**.
+
+Если скачал ZIP, распакуй его, открой **Mochi Snap** и нажми **Перенести и открыть**.
 
 Сборка подписана локальной подписью. macOS может показать предупреждение при первом запуске.
 
@@ -60,6 +63,15 @@ macOS 15.2 и новее · Apple Silicon и Intel · PNG, JPEG, PDF, MP4
 ```
 
 Универсальное приложение появится в `build/Mochi Snap.app`.
+
+Чтобы собрать DMG, установи Python 3.10 или новее и выполни команды из корня репозитория.
+
+```sh
+python3 -m venv build/dmg-tools
+build/dmg-tools/bin/python -m pip install 'dmgbuild==1.6.7'
+build/dmg-tools/bin/dmgbuild -s dmg-settings.py -D "app=$PWD/build/Mochi Snap.app" \
+  'Mochi Snap' build/MochiSnap-macOS.dmg
+```
 
 Для подписи Developer ID и нотариализации установи сертификат **Developer ID Application** с закрытым ключом и сохрани профиль `xcrun notarytool store-credentials MochiSnap`.
 
